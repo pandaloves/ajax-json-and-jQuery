@@ -1,6 +1,5 @@
 * {
   font-family: sans-serif;
-  font-size: 16px;
   background-color: black;
   color: white;
   margin: 0;
@@ -30,7 +29,7 @@ ul {
 }
 #container {
   margin: 30px auto;
-  width: 268px;
+  width: 500px;
 }
 h1 {
   margin: 20px auto;
@@ -63,8 +62,10 @@ span {
   color: rgb(214, 228, 13);
 }
 .content {
-  line-height: 1.8em;
   font-size: 22px;
+}
+.quote-content {
+  line-height: 1.8em;
 }
 p {
   text-align: left;
@@ -77,11 +78,47 @@ p {
   word-spacing: 6px;
 }
 .blog-container {
-  width: 268px;
+  width: 490px;
   border: 1px solid rgb(236, 148, 148);
   display: flex;
   align-items: left;
   justify-content: left;
   padding: 5px;
   display: none;
+}
+
+/* Media Queries  */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  #container {
+    width: 350px;
+  }
+  .blog-container {
+    width: 340px;
+  }
+  a {
+    font-size: 22px;
+  }
+  h1,
+  .date,
+  .author,
+  .content,
+  .quote-content,
+  span,
+  .content {
+  font-size: 18px;
+  }
+  p,
+  .tag {
+  font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  #container {
+    width: 250px;
+  }
+  .blog-container {
+    width: 240px;
+  }
 }

@@ -12,20 +12,15 @@ date.addEventListener("click", () => {
      if (!response.ok) {
        throw new Error("Something went wrong");
      }
-     
       // Create the elements in the container
       const container = document.getElementById("container");
       container.innerHTML = "";
-      body.appendChild(container);
-      const h1 = document.createElement("h1");
-      h1.innerHTML = "Date";
-      container.appendChild(h1);
       const data = await response.json();
-      const textDate = data.dateAdded;
-      const p = document.createElement("p");
-      p.classList.add("text");
-      p.innerHTML = `Date created: <span>${textDate}<span>`;
-      container.appendChild(p);
+      container.innerHTML = `
+      <h1>Date</h1>
+      <p class="text">Date created: <span>${data.dateAdded}<span></p>
+      `;
+      body.appendChild(container);
     }catch(error) {
       console.log(error);
       table.nextElementSibling.innerHTML = "Oops! Something went wrong."  
@@ -42,20 +37,15 @@ author.addEventListener("click", () => {
      if (!response.ok) {
        throw new Error("Something went wrong");
      }
-     const data = await response.json();
       // Create the elements in the container
       const container = document.getElementById("container");
       container.innerHTML = "";
+      const data = await response.json();
+      container.innerHTML = `
+      <h1>Author</h1>
+      <p class="text author">${data.author}</p>
+      `;
       body.appendChild(container);
-      const h1 = document.createElement("h1");
-      h1.innerHTML = "Author";
-      container.appendChild(h1);
-      const textAuthor = data.author;
-      const p = document.createElement("p");
-      p.classList.add("text");
-      p.classList.add("author");
-      p.innerHTML = textAuthor;
-      container.appendChild(p);
     }catch(error) {
       console.log(error);
       table.nextElementSibling.innerHTML = "Oops! Something went wrong."  
@@ -74,11 +64,10 @@ blog.addEventListener("click", () => {
      }
      const container = document.getElementById("container");
      container.innerHTML = "";
-      const data = await response.json();
+     const data = await response.json();
       // Create the elements in the container
       container.innerHTML = `
-      <h1 class="blog-title">Quote</h1>
-   
+      <h1 class="blog-title">Quote (<i><u>Click me</u></i>)&#128540</h1> 
       <div class="blog-container text">
           <p>Date Modified: <span>${data.dateModified}</span></p>
           <p class="quote-content">"${data.content}"</p>
