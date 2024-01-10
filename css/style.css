@@ -3,9 +3,13 @@
   font-size: 16px;
   background-color: black;
   color: white;
+  margin: 0;
+  padding: 0;
 }
 a {
   cursor: pointer;
+  font-family: 'Gill sans';
+  font-size: 26px;
 }
 a:hover {
   text-decoration: underline;
@@ -21,12 +25,12 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 13px;
   list-style: none;
 }
 #container {
   margin: 30px auto;
-  width: 600px;
+  width: 268px;
 }
 h1 {
   margin: 20px auto;
@@ -35,43 +39,49 @@ h1 {
   font-weight: 600;
   text-transform: uppercase;
 }
+.date {
+  font-size: 22px;
+  color: white;
+}
 .text {
   margin: 30px auto;
   padding: 10px;
   line-height: 26px;
-  font-size: 15px;
   text-align: left;
   box-sizing: border;
   border: 1px solid rgb(236, 148, 148);
-}
-article {
-  margin: 30px auto;
-  padding: 10px;
-  line-height: 26px;
-  box-sizing: border;
-  border: 1px solid rgb(236, 148, 148);
-  word-spacing: 6px;
 }
 .blog-title {
-  font-size: 18px;
-  text-align: left;
   cursor: pointer;
+}
+.author,
+.content,
+.quote-content,
+span {
+  font-size: 22px;
+  font-style: italic;
   color: rgb(214, 228, 13);
 }
-span {
-  text-align: left;
-  font-size: 15px;
-  font-style: italic;
+.content {
+  line-height: 1.8em;
+  font-size: 22px;
 }
 p {
   text-align: left;
   font-size: 17px;
 }
+
 .tag {
   font-size: 17px;
-  text-align: center;
+  text-align: left;
   word-spacing: 6px;
 }
 .blog-container {
+  width: 268px;
+  border: 1px solid rgb(236, 148, 148);
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  padding: 5px;
   display: none;
 }
